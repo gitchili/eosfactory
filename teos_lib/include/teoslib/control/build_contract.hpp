@@ -80,7 +80,6 @@ Usage: ./teos create key --jarg '{
         if(vm.count("src")){
           ok = true;
           reqJson_.put("src", src);
-          reqJson_.put("wast_file", wast_file);
           reqJson_.put("include_dir", include_dir);
         }
         return ok;
