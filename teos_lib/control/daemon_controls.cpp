@@ -98,44 +98,42 @@ namespace teos {
     
     void DaemonStart::action()
     {
-      configure();
-
-      if(reqJson_.get(DO_NOT_LAUNCH, 0) <= 0){
+      if(configure() && reqJson_.get(DO_NOT_LAUNCH, 0) <= 0){
         launch();
         wait();        
       }
     }
 
-    void DaemonStart::configure()
+    bool DaemonStart::configure()
     {
       reqJson_.put( "http-server-address", getHttpServerAddress(this));      
       if(isError_){
-        return;
+        return false;
       }
       
       reqJson_.put("data-dir", getDataDir(this));
       if(isError_){
-        return;
+        return false;
       }         
       
       reqJson_.put("config-dir", getConfigDir(this));
       if(isError_){
-        return;
+        return false;
       }
 
       reqJson_.put("genesis-json", getGenesisJson(this));             
       if(isError_){
-        return;
+        return false;
       }      
       
       reqJson_.put("wallet-dir", getWalletDir(this));
       if(isError_){
-        return;
+        return false;
       }
 
       reqJson_.put("daemon_exe", getDaemonExe(this));
       if(isError_){
-        return;
+        return false;
       }
       
       try{
@@ -146,7 +144,7 @@ namespace teos {
         } else if(!getPid().empty()){
           teos::TeosCommand tc = teos::command::GetInfo(); 
           respJson_ = tc.respJson_;
-          return;
+          return false;
         }
 
         string args = string("")
@@ -172,6 +170,7 @@ namespace teos {
       } catch (std::exception& e) {
         putError(e.what());
       }
+      return true;
     }
 
     void DaemonStart::launch()
@@ -185,7 +184,9 @@ namespace teos {
             "'" + reqJson_.get<string>("command_line") + "'");
         } else {
           if(uname() == DARWIN){
-            // bp::spawn("Terminal -n --args " + commandLine);
+            /* bp::spawn("open 
+              -a " + reqJson_.get<string>("daemon_exe") 
+              + " --args " + reqJson_.get<string>("args");*/
           } else{
             bp::spawn("gnome-terminal -- " + reqJson_.get<string>("command_line"));
           }

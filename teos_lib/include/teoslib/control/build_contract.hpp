@@ -58,7 +58,6 @@ Usage: ./teos create key --jarg '{
       }
 
       string src;
-      string wast_file;
       string include_dir;
 
       options_description  argumentDescription() {
@@ -66,8 +65,6 @@ Usage: ./teos create key --jarg '{
         od.add_options()
           ("src", value<string>(&src)
             , "Comma separated list of source c/cpp files.")
-          ("wast_file,o", value<string>(&wast_file)->default_value("")
-            , "Target wast file.")
           ("include_dir,d", value<string>(&include_dir)->default_value("")
             , "Comma separated list of source c/c++ files.");
             
