@@ -8,7 +8,6 @@ set( VERSION_MAJOR 1 )
 set( VERSION_MINOR 0 )
 set( CMAKE_BUILD_TYPE "Debug" )
 set( ECC_IMPL secp256k1 CACHE STRING "secp256k1 or openssl or mixed")
-file(APPEND "config.json" "")
 
 set( EOSIO_CONTEXT_DIR "NOT DEFINED !!" )
 set( EOSIO_SOURCE_DIR "NOT DEFINED !!" )
@@ -30,6 +29,7 @@ if( NOT DEFINED EOSIO_SOURCE_DIR )
 	message( FATAL_ERROR "Something is wrong with the 'commom.cmake' definition file"	)
 endif()
 
+
 set( BUILD_SHARED_LIBS NO )
 set( BUILD_DOXYGEN TRUE )
 list( APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/../CMakeModules" )
@@ -38,6 +38,8 @@ message(STATUS "CMAKE_SYSTEM_NAME: ${CMAKE_SYSTEM_NAME}")
 
 set( TEST_ADDRESS "tokenika")
 set( TEST_HTTP_ADDRESS "eos-testapi.tokenika.io:8888" )
+set( CONFIG_JSON_FILE "config.json" )
+set( CONFIG_JSON "${CONFIG_JSON_FILE}" )
 
 # Ensure that even static libraries are relocatable so they can be linked into a .so
 set( CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC" )
@@ -105,6 +107,11 @@ if( NOT ECC_IMPL STREQUAL openssl )
 endif()
 
 ## END DEPENDENCIES ##########################################################
+
+# set( EOSIO_WASM_CLANG "\${HOME}/opt/wasm/bin/clang" )
+# set( EOSIO_WASM_LLVM_LINK "\${HOME}/opt/wasm/bin/llvm-link" )
+# set( EOSIO_WASM_LLC "\${HOME}/opt/wasm/bin/llc" )
+# set( EOSIO_BINARYEN_BIN "/usr/local/binaryen/bin/" )
 
 ## BEGIN CONFIG FILES ########################################################
 
