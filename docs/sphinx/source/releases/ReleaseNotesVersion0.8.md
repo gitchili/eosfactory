@@ -1,4 +1,8 @@
-# EOSFactory Release Notes - Version 0.8
+# EOSFactory Release Notes - v0.8
+
+## Compatibility
+
+EOSFactory [v0.8](https://github.com/tokenika/eosfactory/releases/tag/v0.8) is compatible with EOS [dawn-v4.0.0](https://github.com/EOSIO/eos/releases/tag/dawn-v4.0.0).
 
 ## What works in this release
 
