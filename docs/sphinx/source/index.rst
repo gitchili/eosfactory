@@ -55,7 +55,7 @@ Python Documentation
 
 
 Metadata
-------------------
+--------
 
 * :ref:`genindex`
 * :ref:`modindex`
