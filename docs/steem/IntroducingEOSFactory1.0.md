@@ -1,12 +1,12 @@
 # Introducing EOSFactory 1.0 release with standard Python-based unit testing
 
-**We are proud to announce the second release of EOSFactory. With this release unit tests for EOS smart-contracts become standardized and thus much more reliable. Also, with EOSFactory you can now tap into all the utilities offered by Visual Studio Code IDE.**
+**We are proud to announce the second release of EOSFactory. With this release unit tests for EOS smart-contracts become standardized and thus much more reliable. Also, you can now tap into all the utilities offered by Visual Studio Code IDE.**
 
 ![EOSFactory logo.png](https://cdn.steemitimages.com/DQmR21xQNJ4CbS1DoJEAutvYFWU9mD11PAYkCQZpLnHXLdY/EOSFactory%20logo.png)
 
 The initial release (v0.8 [published](https://steemit.com/eos/@tokenika/introducing-eosfactory-an-eos-smart-contract-development-and-testing-framework) three weeks ago) was a solid foundation but contained only simple examples of home-made unit tests, whose only point was to prove the concept. Therefore those unit tests could not be treated as a robust verification tool: they did not handle errors in an orderly manner and they did not offer proper assertions.
 
-### Standard unit tests
+### Standardized unit testing
 
 This release takes [EOSFactory](https://github.com/tokenika/eosfactory) to the next level. We've integrated it with [Unittest](https://docs.python.org/2/library/unittest.html), the standard unit testing framework for Python. What it means is that from now on, when using EOSFactory for working with EOS smart-contracts, you have the power of standardized Python-based unit testing at your disposal.
 
@@ -26,7 +26,7 @@ Here is a complete list of EOSFactory features available in the 1.0 release:
 
 #### 1. Standard unit-testing framework
 
-We are utilizing the power of [Unittest](https://docs.python.org/3/library/unittest.html), the standard Python unit test framework. According to its documentation it's a fully fledged and highly standardized toolset:
+We are utilizing the power of [Unittest](https://docs.python.org/3/library/unittest.html), the standard Python unit test framework. As emphasized in the documentation, Unittest is a fully fledged and highly standardized toolset:
 
 > The `unittest` unit testing framework was originally inspired by JUnit and has a similar flavor as major unit testing frameworks in other languages. It supports test automation, sharing of setup and shutdown code for tests, aggregation of tests into collections, and independence of the tests from the reporting framework. 
 
@@ -36,7 +36,7 @@ We are introducing a clear separation between EOSFactory infrastructure (includi
 
 #### 3. Support for debugging
 
-Smart-contracts can never be properly debugged (as you cannot pause the blockchain easily), but we've come up with a good work-around for tracking a smart-contract’s execution. What you can do with EOSFactory is put in your C++ code logger clauses (e.g. `logger_info("user: ", name{user});`) which will produce output to the console giving you the exact location of its origin, including the C++ file name and line number.
+Smart-contracts can never be properly debugged (as you cannot pause the blockchain easily), but we've come up with a good work-around for tracking a smart-contract’s execution. What you can do with EOSFactory is put in your C++ code special logger clauses (e.g. `logger_info("user: ", name{user});`) which will produce output to the console giving you the exact location of its origin, including the C++ file name and line number.
 
 #### 4. Contract verification with CLANG
 
