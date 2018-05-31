@@ -1,20 +1,28 @@
 # Introducing EOSFactory 1.0 release with standard Python-based unit testing
 
-We are proud to announce the second release of [EOSFactory](https://github.com/tokenika/eosfactory).
+**We are proud to announce the second release of EOSFactory. With this release unit tests for EOS smart-contracts become standardized and thus much more reliable. Also, with EOSFactory you can now tap into all the utilities offered by Visual Studio Code IDE.**
 
-The initial release (v0.8 published three weeks ago) was a solid foundation but contained only simple examples of home-made unit tests, whose only point was to prove the concept. Therefore those unit tests could not be treated as a robust verification tool: they did not handle errors in an orderly manner and they did not offer proper assertions.
+![EOSFactory logo.png](https://cdn.steemitimages.com/DQmR21xQNJ4CbS1DoJEAutvYFWU9mD11PAYkCQZpLnHXLdY/EOSFactory%20logo.png)
 
-This release takes EOSFactory to the next level. We've integrated it with [Unittest](https://docs.python.org/2/library/unittest.html), the standard unit testing framework for Python. What it means is that from now on, when using EOSFactory for working with EOS smart-contracts, you have the power of standardized Python-based unit testing at your disposal.
+The initial release (v0.8 [published](https://steemit.com/eos/@tokenika/introducing-eosfactory-an-eos-smart-contract-development-and-testing-framework) three weeks ago) was a solid foundation but contained only simple examples of home-made unit tests, whose only point was to prove the concept. Therefore those unit tests could not be treated as a robust verification tool: they did not handle errors in an orderly manner and they did not offer proper assertions.
+
+### Standard unit tests
+
+This release takes [EOSFactory](https://github.com/tokenika/eosfactory) to the next level. We've integrated it with [Unittest](https://docs.python.org/2/library/unittest.html), the standard unit testing framework for Python. What it means is that from now on, when using EOSFactory for working with EOS smart-contracts, you have the power of standardized Python-based unit testing at your disposal.
 
 Also, we've made the much needed separation between EOSFactory infrastructure and user-defined workspace for smart-contract development.
 
-We believe that those two features make EOSFactory quite reliable and production-ready - hence we label it v1.0. 
+We believe that those two features make EOSFactory quite reliable and production-ready - hence we label it v1.0.
 
-Generally, EOSFactory when combined with [Visual Studio Code IDE](https://code.visualstudio.com/) is evolving into a robust EOS smart-contract development environment. All the essential programming tools become available to you, as EOSFactory smart-contract template generator is able to produce a complete Visual Studio Code project, which includes not only unit testing support but also `cmake` support, automated tasks and all the features that come with [IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b.aspx): code completion, content assist, and code hinting.
+### EOS smart-contract IDE
+
+Generally, EOSFactory when combined with [Visual Studio Code IDE](https://code.visualstudio.com/) is evolving into a robust EOS smart-contract development environment. All the essential programming tools become available to you, as EOSFactory smart-contract template generator is able to produce a complete Visual Studio Code project, which includes not only unit testing support but also [CMake](https://cmake.org/) support, automated tasks and all the features that come with [IntelliSense](https://msdn.microsoft.com/en-us/library/hcw1s69b.aspx): e.g. code completion, content assist, code hinting.
 
 ![img](https://cdn.steemitimages.com/DQmcYyhEcoz4Az2vEf7vA1AJYgTNzhvKewsKPqd7hqbphyo/peek.png)
 
-And here is a complete list of EOSFactory features available in the 1.0 release:
+### Main features in v1.0
+
+Here is a complete list of EOSFactory features available in the 1.0 release:
 
 #### 1. Standard unit-testing framework
 
